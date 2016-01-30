@@ -1,0 +1,25 @@
+<h1>Comments!</h1>
+
+<table>
+    <repeat group="{{ @comments }}" value="{{ @comment }}">
+        <tr>
+            <td>{{ @comment.created }}</td>
+            <td>{{ @comment.author }}</td>
+            <td>{{ @comment.content }}</td>
+        </tr>
+    </repeat>
+</table>
+
+<hr/>
+
+<form action="/add_comment" method="post">
+    Name:<br/>
+    <input type="text" name="author" style="width: 250px;"/><br/>
+    Comment:<br/>
+    <textarea name="content" style="width: 250px; height: 150px;"></textarea><br/>
+    <input type="submit" value="Send!">
+</form>
+
+<hr/>
+
+<a href="/">< Back</a>
